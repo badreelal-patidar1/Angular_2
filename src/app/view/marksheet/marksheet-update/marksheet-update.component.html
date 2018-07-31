@@ -1,0 +1,13 @@
+<div *ngIf="marksheet">
+    <div class="container">
+        <h3 class="mb-3">Update Marksheet</h3>
+        <div>
+            <app-marksheet-create *ngIf="utils.tabIs(tab, 'edit')" [marksheet]="marksheet"></app-marksheet-create>
+        </div>
+    </div>
+</div>
+
+<!-- Error loading marksheet -->
+<p *ngIf="error" class="alert alert-danger">
+    <strong>Error:</strong> marksheet data could not be retrieved.
+</p>

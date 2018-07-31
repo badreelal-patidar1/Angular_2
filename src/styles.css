@@ -1,0 +1,252 @@
+/*--------------------
+ BASICS
+ --------------------*/
+
+/* -- purpleish */
+
+/* $highlight-color: #3eaaaf -- blueish */
+
+body {
+  min-width: 320px;
+  color: #24292e;
+}
+
+* {
+  border-radius: 0 !important;
+}
+
+*:focus, input[type=text]:focus, textarea:focus {
+  box-shadow: none;
+  outline: none !important;
+}
+
+h1 {
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 250;
+}
+
+h3 {
+  font-weight: 150;
+}
+
+h4 {
+  font-weight: 80;
+}
+
+a {
+  color: #24292e;
+}
+
+/*--------
+   COLORS 
+   ---------*/
+
+a, .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link {
+  border: none;
+  color: #6d7fcc;
+}
+
+a:hover, a:active, .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
+  color: #6d7fcc;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+  border-bottom: 1px solid #6d7fcc;
+  color: #6d7fcc;
+}
+
+/*
+   .btn-primary, 
+   .btn-primary:hover
+   {
+   font-family: "Miriam Libre",sans-serif;
+   text-color: $app-text-color;
+   background-color: $app-highlight-color !important; 
+   box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+   border: none;
+   border-bottom: 1px solid #dee2e6!important;
+   }
+   */
+
+/*--------
+   OTHER 
+   ---------*/
+
+.list-group-item.active {
+  border-right: solid #e74c3c !important;
+  color: #333;
+  font-weight: bold;
+}
+
+.tab-pane:after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.nav-tabs {
+  border-bottom: 1px dotted #ddd;
+}
+
+/*
+   .list-group-item.active {
+   position: relative;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-flex-flow: row wrap;
+   -ms-flex-flow: row wrap;
+   flex-flow: row wrap;
+   -webkit-box-align: center;
+   -webkit-align-items: center;
+   -ms-flex-align: center;
+   align-items: center;
+   padding: .75rem 1.25rem;
+   margin-bottom: -1px;
+   background-color: #3eaaaf;
+   border: 1px solid rgba(0,0,0,.125);
+   }
+   */
+
+/*-- Cursor --*/
+
+a, input[type=button], input[type=submit], button {
+  cursor: pointer;
+}
+
+/*-- Link Buttons --*/
+
+.btn-link {
+  color: #0275d8;
+}
+
+.btn-link:hover {
+  text-decoration: underline !important;
+}
+
+.btn-link:focus {
+  box-shadow: none !important;
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/*-- Forms --*/
+
+input[type="text"], input[type="number"], input[type="password"], input[type="date"], select option, textarea {
+  font-size: 16px;
+  /* for iOS to prevent autozoom */
+}
+
+.formErrors {
+  padding-top: 6px;
+}
+
+.ng-invalid.ng-dirty, .ng-invalid.ng-dirty:focus {
+  border-color: #d9534e !important;
+}
+
+input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: rgba(0, 0, 0, .25) !important;
+  opacity: 1 !important;
+}
+
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: rgba(0, 0, 0, .25) !important;
+  opacity: 1 !important;
+}
+
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: rgba(0, 0, 0, .25) !important;
+  opacity: 1 !important;
+}
+
+input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: rgba(0, 0, 0, .25) !important;
+  opacity: 1 !important;
+}
+
+/*-- Helpers --*/
+
+.opacity-half {
+  opacity: 0.5;
+}
+
+.list-group-item>strong {
+  padding-right: 5px;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+}
+
+/* For mobile phones: */
+
+[class*="col-"] {
+  width: 100%;
+}
+
+.table .radio, .table .checkbox {
+  position: relative;
+  height: 20px;
+  display: block;
+  width: 20px;
+  padding: 0px 0px;
+  margin: 0px 5px;
+  text-align: center;
+}
+
+.table .radio .icons, .table .checkbox .icons {
+  left: 5px;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+  padding: 12px 8px;
+  vertical-align: middle;
+}
+
+.table>tbody>tr>td {
+  font-size: 14px;
+}
+
+.table>thead>tr>th {
+  border-bottom-width: 1px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.table .td-actions .btn {
+  opacity: 0.36;
+}
+
+.table .td-actions .btn.btn-xs {
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
+.table .td-actions {
+  min-width: 90px;
+}
+
+.table>tbody>tr {
+  position: relative;
+}
+
+.table>tbody>tr:hover .td-actions .btn {
+  opacity: 1;
+}

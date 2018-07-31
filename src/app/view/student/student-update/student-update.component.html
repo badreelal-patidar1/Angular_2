@@ -1,0 +1,13 @@
+<div *ngIf="student">
+    <div class="container">
+        <h3 class="mb-3">Update Student</h3>
+        <div>
+            <app-student-create *ngIf="utils.tabIs(tab, 'edit')" [student]="student"></app-student-create>
+        </div>
+    </div>
+</div>
+
+<!-- Error loading Student -->
+<p *ngIf="error" class="alert alert-danger">
+    <strong>Error:</strong> student data could not be retrieved.
+</p>

@@ -1,0 +1,60 @@
+<ng-container>
+  <div class="container">
+    <div class="col-md-8 order-md-1">
+      <h3 class="mb-3" *ngIf="submitBtnText!='Update'">Create Marksheet</h3>
+
+      <form class="form-group" [formGroup]="marksheetForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label class="control-label " for="name">Roll No:</label>
+          <input id="rollNo" type="text" class="form-control" formControlName="rollNo" [minlength]='mfs.texMin'>
+          <div *ngIf="formErrors.rollNo" class="small text-danger formErrors" [innerHTML]="formErrors.rollNo">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label " for="name">StudentId:</label>
+          <input id="studentId" type="text" class="form-control" formControlName="studentId" [minlength]="mfs.textMin">
+          <div *ngIf="formErrors.studentId" class="small text-danger formErrors" [innerHTML]="formErrors.studentId">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label " for="name">Name:</label>
+          <input id="name" type="text" class="form-control" formControlName="name" [minlength]="mfs.textMin">
+          <div *ngIf="formErrors.name" class="small text-danger formErrors" [innerHTML]="formErrors.name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label " for="name">Physics:</label>
+          <input id="physics" type="text" class="form-control" formControlName="physics" [pattern]="mfs.pattern" [maxlength]="mfs.textMax">
+          <div *ngIf="formErrors.physics" class="small text-danger formErrors" [innerHTML]="formErrors.physics">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label " for="name">Chemistry:</label>
+          <input id="chemistry" type="text" class="form-control" formControlName="chemistry" [pattern]="mfs.pattern" [maxlength]="mfs.textMax">
+          <div *ngIf="formErrors.chemistry" class="small text-danger formErrors" [innerHTML]="formErrors.chemistry">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label " for="name">Maths:</label>
+          <input id="maths" type="text" class="form-control" formControlName="maths" [pattern]="mfs.pattern" [maxlength]="mfs.textMax">
+          <div *ngIf="formErrors.maths" class="small text-danger formErrors" [innerHTML]="formErrors.maths">
+          </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" [attr.disabled]="marksheetForm.invalid || submitting ? true : null" [innerText]="submitBtnText"></button>
+          <p *ngIf="error" class="mt-3 alert alert-danger">
+            <strong>Error:</strong> There was a problem creating Marksheet. Please try again.
+          </p>
+          <p *ngIf="message" class="mt-3 alert alert-success">
+            <strong>Congratulation:</strong>Marksheet has been {{submitBtnText}}d successfully.
+          </p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</ng-container>

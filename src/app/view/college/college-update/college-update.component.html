@@ -1,0 +1,15 @@
+<!-- <ng-template> -->
+<div *ngIf="college">
+    <div class="container">
+        <h3 class="mb-3">Update College</h3>
+        <div>
+            <app-college-create *ngIf="utils.tabIs(tab, 'edit')" [college]="college"></app-college-create>
+        </div>
+    </div>
+</div>
+
+<!-- Error loading college -->
+<p *ngIf="error" class="alert alert-danger">
+    <strong>Error:</strong> College data could not be retrieved.
+</p>
+<!-- </ng-template> -->

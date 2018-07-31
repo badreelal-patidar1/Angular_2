@@ -1,0 +1,70 @@
+<ng-template [ngIf]="userList">
+  <p *ngIf="error" class="mt-3 alert alert-danger alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Error:</strong> There was a problem deleting User. Please try again.
+  </p>
+  <p *ngIf="message" class="mt-3 alert alert-success alert-dismissible">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    User has been deleted successfully.
+  </p>
+  <ng-template [ngIf]="userList.length">
+    <div class="col-md-12">
+      <table class="table table-sm table-bordered table-hover table-responsive-sm">
+        <thead class="thead-dark">
+          <th scope="row">#</th>
+          <th scope="row">First Name
+          </th>
+          <th scope="row">Last Name
+          </th>
+          <th scope="row">Login
+          </th>
+          <th scope="row">Password
+          </th>
+          <th scope="row">Date of Birth
+          </th>
+          <th scope="row">Mobile No
+          </th>
+          <th scope="row">Role Id
+          </th>
+          <th scope="row">Gender
+          </th>
+          <th scope="row">Action
+          </th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of userList;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{data.firstName}}</td>
+            <td>{{data.lastName}}</td>
+            <td>{{data.login}}</td>
+            <td>{{data.password}}</td>
+            <td>{{data.dob}}</td>
+            <td>{{data.mobileNo}}</td>
+            <td>{{data.roleId}}</td>
+            <td>{{data.gender}}</td>
+            <td>
+              <button type="button" class="btn btn-primary" [routerLink]="['/user/UserUpdate/', data.id]" [queryParams]="{tab: 'edit'}"
+                [ngClass]="{'active': utils.tabIs(tab, 'edit')}">
+                <i class="fas fa-edit ">
+                </i>
+              </button>
+              <button type="button " (click)="delete(data.id) " class="btn btn-danger ">
+                <i class="far fa-trash-alt "></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+
+  <!-- No User found -->
+  <p *ngIf="!userList.length " class="alert alert-info ">
+    No User found.
+  </p>
+</ng-template>
+
+<!-- Error loading User -->
+<p *ngIf="error " class="alert alert-danger mt-3 ">
+  <strong>Oops!</strong> There was an error retrieving Users.
+</p>

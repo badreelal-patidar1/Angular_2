@@ -1,0 +1,55 @@
+
+<ng-container>
+  <div class="container">
+    <div class="col-md-8 order-md-1">
+      <h3 class="mb-3" *ngIf="submitBtnText!='Update'">Create College</h3>
+
+      <form class="form-group" [formGroup]="collegeForm" (ngSubmit)="onSubmit()">
+        <!-- Name -->
+        <div class="form-group">
+          <label class="control-label " for="name">College Name:</label>
+          <input id="name" type="text" class="form-control" formControlName="name" [maxlength]="cfs.nameMax" [minlength]='cfs.texMin'>
+          <div *ngIf="formErrors.name" class="small text-danger formErrors" [innerHTML]="formErrors.name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label " for="name">Address:</label>
+          <textarea id="address" type="text" class="form-control" formControlName="address" [minlength]="cfs.textMin"></textarea>
+          <div *ngIf="formErrors.address" class="small text-danger formErrors" [innerHTML]="formErrors.address">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label " for="name">State:</label>
+          <input id="state" type="text" class="form-control" formControlName="state" [minlength]="cfs.textMin">
+          <div *ngIf="formErrors.state" class="small text-danger formErrors" [innerHTML]="formErrors.state">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label " for="name">City:</label>
+          <input id="city" type="text" class="form-control" formControlName="city" [minlength]="cfs.textMin">
+          <div *ngIf="formErrors.city" class="small text-danger formErrors" [innerHTML]="formErrors.city">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="control-label " for="name">PhoneNo:</label>
+          <input id="phoneNo" type="text" class="form-control" formControlName="phoneNo" [minlength]="cfs.textMin" [pattern]="cfs.pattern">
+          <small *ngIf="formErrors.phoneNo" class="small text-danger formErrors" [innerHTML]="formErrors.phoneNo">
+          </small>
+        </div>
+
+        <!-- Submit -->
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary" [attr.disabled]="collegeForm.invalid || submitting ? true : null" [innerText]="submitBtnText"></button>
+          <p *ngIf="error" class="mt-3 alert alert-danger">
+            <strong>Error:</strong> There was a problem creating your College. Please try again.
+          </p>
+          <p *ngIf="message" class="mt-3 alert alert-success">
+            <strong>Congratulation:</strong>Your College has been {{submitBtnText}}d successfully.
+          </p>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</ng-container>

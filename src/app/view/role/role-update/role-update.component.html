@@ -1,0 +1,15 @@
+<!-- <ng-template> -->
+  <div *ngIf="role">
+    <div class="container">
+        <h3 class="mb-3">Update Role</h3>
+        <div>
+            <app-role-create *ngIf="utils.tabIs(tab, 'edit')" [role]="role"></app-role-create>
+        </div>
+    </div>
+</div>
+
+<!-- Error loading project -->
+<p *ngIf="error" class="alert alert-danger">
+    <strong>Error:</strong> Role data could not be retrieved.
+</p>
+<!-- </ng-template> -->

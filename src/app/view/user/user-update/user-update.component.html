@@ -1,0 +1,13 @@
+<div *ngIf="user">
+  <div class="container">
+    <h3 class="mb-3">Update User</h3>
+    <div>
+      <app-user-create *ngIf="utils.tabIs(tab, 'edit')" [user]="user"></app-user-create>
+    </div>
+  </div>
+</div>
+
+<!-- Error loading user -->
+<p *ngIf="error" class="alert alert-danger">
+  <strong>Error:</strong> User data could not be retrieved.
+</p>
